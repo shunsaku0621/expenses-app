@@ -1,1 +1,29 @@
-トップページです
+
+
+
+<h1>記事一覧</h1>
+<%= link_to "投稿する", new_expense_path, class:"post" %>
+
+
+
+<%= month_calendar events: @incomes do |date, events| %>
+  <%= date.day %>
+<% end %>
+
+
+
+
+
+<% @incomes.each do |income| %>
+  <div class="income">
+    <div class="income-genre">
+      <%= income.genre.name %>
+    </div>
+    <div class="income-title">
+      <%= income.amount %>
+    </div>
+    <div class="income-text">
+      <%= income.memo %>
+    </div>
+  </div>
+<% end %>
