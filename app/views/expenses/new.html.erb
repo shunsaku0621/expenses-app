@@ -1,0 +1,13 @@
+<%= form_with model: @income, url:expenses_path, local: true do |f| %>
+  <div class="article-box">
+    記事を投稿する
+    <%= f.text_field :amount, class:"title", placeholder:"金額" %>
+    <%= f.text_area :memo, class:"text", placeholder:"めも" %>
+    <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"genre-select"}) %>
+    <div class="time">
+      <%= f.label :start_time %>
+      <%= f.datetime_select :start_time %>
+    </div>
+    <%= f.submit "投稿する" ,class:"btn" %>
+  </div>
+<% end %>

@@ -8,6 +8,11 @@
 
 <%= month_calendar events: @incomes do |date, events| %>
   <%= date.day %>
+  <% events.each do |event| %>
+    <div>
+      <%= event.amount %>円
+    </div>
+  <% end %>
 <% end %>
 
 
@@ -17,7 +22,7 @@
 <% @incomes.each do |income| %>
   <div class="income">
     <div class="income-genre">
-      <%= income.genre.name %>
+      <%= income.category.name %>
     </div>
     <div class="income-title">
       <%= income.amount %>
