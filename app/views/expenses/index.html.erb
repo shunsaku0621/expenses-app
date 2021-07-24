@@ -8,9 +8,13 @@
 
 <%= month_calendar events: @incomes do |date, events| %>
   <%= date.day %>
+  <% sum = 0 %>
   <% events.each do |event| %>
+    <% sum += event.amount %>
+  <% end %>
+  <% if sum>0 %>
     <div>
-      <%= event.amount %>円
+      <%= sum %>円
     </div>
   <% end %>
 <% end %>

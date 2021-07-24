@@ -1,6 +1,7 @@
 class ExpensesController < ApplicationController
   def index
     @incomes = Income.order("created_at")
+    @income_sum = @incomes[0].income_sum
   end
 
   def new
