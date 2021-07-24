@@ -3,6 +3,7 @@
 
 <h1>記事一覧</h1>
 <%= link_to "投稿する", new_expense_path, class:"post" %>
+<%= @day_params %>
 
 
 
@@ -23,16 +24,19 @@
 
 
 
+
 <% @incomes.each do |income| %>
-  <div class="income">
-    <div class="income-genre">
-      <%= income.category.name %>
+  <% if%>
+    <div class="income">
+      <div class="income-genre">
+        <%= income.category.name %>
+      </div>
+      <div class="income-title">
+        <%= income.amount %>
+      </div>
+      <div class="income-text">
+        <%= income.memo %>
+      </div>
     </div>
-    <div class="income-title">
-      <%= income.amount %>
-    </div>
-    <div class="income-text">
-      <%= income.memo %>
-    </div>
-  </div>
+  <% end %>
 <% end %>
