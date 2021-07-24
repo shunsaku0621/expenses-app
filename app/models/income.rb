@@ -16,5 +16,7 @@ class Income < ApplicationRecord
     end
     income_array.sum
   end
+
+  
   
 end
