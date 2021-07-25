@@ -5,7 +5,6 @@
     <%= f.text_area :memo, class:"text", placeholder:"めも" %>
     <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"genre-select"}) %>
     <div class="time">
-      <% binding.pry %>
       <%= f.label :日付 %>
       <%= f.datetime_select :start_time %>
     </div>
