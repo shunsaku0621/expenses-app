@@ -6,6 +6,7 @@ class ExpensesController < ApplicationController
   end
 
   def new
+    req_url
     @income = Income.new
   end
 
@@ -27,6 +28,11 @@ class ExpensesController < ApplicationController
 
   def my_page_show
     @day_params = params[:start_date]
-    @day_params.to_date
   end
+
+  def req_url
+    @req = request.base_url
+  end
+
+  
 end

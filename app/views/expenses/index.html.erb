@@ -6,9 +6,9 @@
 
 
 
-
 <%= month_calendar events: @incomes do |date, events| %>
   <%= date.day %>
+  <% @s = date.month %>
   <% sum = 0 %>
   <% events.each do |event| %>
     <% sum += event.amount %>
@@ -20,14 +20,14 @@
   <% end %>
 <% end %>
 
-
-
+<% @s.to_i %>
+<% @h = @s-1 %>
 
 
 
 
 <% @incomes.each do |income| %>
-  <% if @day_params.slice(0,7) == income.start_time.strftime('%Y-%m') %>
+  <% if @h == income.start_time.strftime('%m').slice(1).to_i %>
     <div class="income">
       <div class="income-genre">
         <%= income.category.name %>
