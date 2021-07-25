@@ -27,5 +27,6 @@ class ExpensesController < ApplicationController
 
   def my_page_show
     @day_params = params[:start_date]
+    @day_params.to_date
   end
 end
