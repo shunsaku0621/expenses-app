@@ -3,7 +3,7 @@
 
 <h1>記事一覧</h1>
 <%= link_to "投稿する", new_expense_path, class:"post" %>
-<%= @day_params %>
+
 
 
 
@@ -25,8 +25,9 @@
 
 
 
+
 <% @incomes.each do |income| %>
-  <% if%>
+  <% if @day_params.slice(0,7) == income.start_time.strftime('%Y-%m') %>
     <div class="income">
       <div class="income-genre">
         <%= income.category.name %>
